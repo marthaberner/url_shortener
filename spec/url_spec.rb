@@ -12,6 +12,15 @@ feature "URL shortener" do
     expect(page).to have_field "explanatory placeholder text"
     expect(page).to have_button "shorten"
   end
+
+  scenario "user submits url to be shortened and old url and new heroku url are displayed" do
+    visit "/"
+    fill_in "url", with: "wwww.testurl.com"
+    click_on "shorten"
+    expect(page).to have_content "www.testurl.com"
+    expect(page).to have_content "http://radiant-atoll-4289.herokuapp.com/1"
+
+  end
 end
 
 
