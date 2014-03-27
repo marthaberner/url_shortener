@@ -1,0 +1,3 @@
+require './url'
+
+run Url
