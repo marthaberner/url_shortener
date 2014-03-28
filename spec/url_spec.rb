@@ -9,7 +9,7 @@ feature "URL shortener" do
   scenario "user visits homepage" do
 
     visit "/"
-    expect(page).to have_field "explanatory placeholder text"
+    expect(page).to have_field "enter a url to be shortened here"
     expect(page).to have_button "shorten"
   end
 
@@ -18,7 +18,9 @@ feature "URL shortener" do
     fill_in "url", with: "wwww.testurl.com"
     click_on "shorten"
     expect(page).to have_content "www.testurl.com"
-    expect(page).to have_content "http://radiant-atoll-4289.herokuapp.com/1"
+    expect(page).to have_content "http://radiant-atoll-4289.herokuapp.com/0"
+    save_and_open_page
+
 
   end
 end

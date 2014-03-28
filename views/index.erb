@@ -1,18 +1,17 @@
+<!DOCTYPE html>
 <html>
+<head>
+  <title>URL shortener</title>
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
 
 <body>
-<form action="/" method="post">
-  <input type ="text" placeholder="explanatory placeholder text" name="url">
+<form action="/show/<%= id %>" method="post">
+  <input type ="text" placeholder="enter a url to be shortened here" name="url">
   <input type ="submit" value="shorten">
 </form>
 
-<% url.each do |old| %>
-  old url: <%= old %><br>
-  <% end %>
 
-<% new_url.to_enum.with_index(1).each do |new, id| %>
-  new url: <%= new %><%= id %><br>
-<% end %>
 
 </body>
 </html>

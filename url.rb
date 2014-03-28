@@ -10,14 +10,38 @@ class Url < Sinatra::Base
 
 
   get "/" do
+    id = NEW_URL_LIST.length.to_i
 
-    erb :index, :locals => {:url => URL_LIST, :new_url => NEW_URL_LIST}
+    erb :index, :locals => {:id => id}
   end
 
-  post "/" do
+  get "/show" do
+    id = params[:id].to_i
+    new_url = NEW_URL_LIST[id]
+    old_url = URL_LIST[id]
+
+    erb :show, :locals => {:old_url => old_url, :new_url => new_url, :id => id}
+
+  end
+
+
+  post "/show/:id" do
+    id = params[:id].to_i
     URL_LIST << params[:url]
-    NEW_URL_LIST <<   H_URL
+    NEW_URL_LIST << H_URL
 
-    redirect '/'
+
+
+    redirect "/show/#{id}"
+
   end
+
+  get '/show/:id' do
+    id = params[:id].to_i
+    new_url = NEW_URL_LIST[id]
+    old_url = URL_LIST[id]
+
+    erb :show, :locals => {:old_url => old_url, :new_url => new_url, :id => id}
+  end
+
 end
