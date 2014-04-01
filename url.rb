@@ -6,7 +6,7 @@ class Url < Sinatra::Base
 
   URL_LIST = []
   NEW_URL_LIST = []
-  H_URL = "http://ltl.herokuapp.com/"
+  H_URL = "http://my-little-url.herokuapp.com/"
 
   get "/" do
     id = NEW_URL_LIST.length.to_i
@@ -14,15 +14,15 @@ class Url < Sinatra::Base
     erb :index, :locals => {:id => id + 1}
   end
 
-  post "/show/:id" do
+  post "/:id" do
     id = params[:id].to_i
     URL_LIST << params[:url]
     NEW_URL_LIST << H_URL
 
-    redirect "/show/#{id}"
+    redirect "/#{id}"
   end
 
-  get '/show/:id' do
+  get '/:id' do
     id = params[:id].to_i
     new_url = NEW_URL_LIST[id - 1]
     old_url = URL_LIST[id - 1]
