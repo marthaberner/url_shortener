@@ -18,10 +18,7 @@ feature "URL shortener" do
     fill_in "url", with: "wwww.testurl.com"
     click_on "shorten"
     expect(page).to have_content "www.testurl.com"
-    expect(page).to have_content "http://radiant-atoll-4289.herokuapp.com/0"
-    save_and_open_page
-
-
+    expect(page).to have_content "/1"
   end
 end
 
