@@ -1,27 +1,28 @@
 input[type="text"] {
 
     box-sizing: border-box;
-    width: 40%;
-    border: .15em solid;
-    font-size: 30px;
+    width: 30%;
+    border: .25em solid;
+    font-size: 15px;
+    color:  black;
     position: relative;
-    margin-left: 25%;
+    margin-left: 35%;
     margin-right: 25%;
     margin-top: 20%;
-    padding: 10px;
+    padding: 5px;
 }
 
 input[type="submit"] {
     position: relative;
-    margin-left: 40%;
-    margin-right: 25%;
-    margin-top: 2%;
-    background-color: blue;
-    font-size: 20px;
+    margin-left: 47%;
+    margin-right: 35%;
+    margin-top: 1%;
+    background-color: #0774E8;
+    font-size: 15px;
     color: white;
     padding: 10px;
-    box-shadow: 5px 5px 2px #888888;
-    border: 2px solid black;
+    box-shadow: 4px 4px 2px black;
+    border: 4px solid black;
 }
 
 .labels {
